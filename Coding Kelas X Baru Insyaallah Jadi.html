@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X SOFT SKILL | Angkatan 2026/2027</title>
+
+<style>
+/* ===== CSS DASAR ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #090d18;
+  color: #f1f5f9;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 88%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.eyebrow {
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  margin: 12px 0 20px;
+}
+
+.description {
+  color: #a7b2c6;
+  max-width: 650px;
+}
+
+/* ===== NAVIGASI ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 13, 24, 0.94);
+  border-bottom: 1px solid #202a3c;
+  backdrop-filter: blur(12px);
+}
+
+.nav-content {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* ===== BERANDA ===== */
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 30%,
+    #123d6a 0%, transparent 40%),
+    radial-gradient(ellipse at 10% 90%,
+    #31205e 0%, transparent 45%),
+    #090d18;
+}
+
+.hero-content {
+  max-width: 850px;
+  padding: 100px 0;
+}
+
+.hero-label {
+  display: inline-block;
+  border: 1px solid #284969;
+  border-radius: 30px;
+  padding: 6px 16px;
+  color: #7dd3fc;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1.08;
+  margin: 25px 0;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: #38bdf8;
+}
+
+.hero p {
+  color: #a7b2c6;
+  max-width: 620px;
+  font-size: 17px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: #38bdf8;
+  color: #07111e;
+  border-color: #38bdf8;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* ===== STATISTIK ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.stat {
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+}
+
+.stat h3 {
+  font-size: 32px;
+  color: #38bdf8;
+}
+
+.stat p {
+  font-size: 13px;
+}
+
+/* ===== TENTANG ===== */
+.about {
+  background: #0d1321;
+}
+
+.about-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: #121b2c;
+  border: 1px solid #263449;
+  border-radius: 14px;
+  padding: 25px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+}
+
+.card-icon {
+  font-size: 30px;
+  color: #38bdf8;
+}
+
+.card h3 {
+  margin: 12px 0;
+  font-size: 19px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #9caec3;
+}
+
+/* ===== ANGGOTA ===== */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #111a2a;
+  border: 1px solid #263449;
+  border-radius: 12px;
+  padding: 20px;
+  transition: .3s;
+}
+
+.member:hover {
+  border-color: #38bdf8;
+  background: #152238;
+}
+
+.number {
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #1e3a5b;
+  color: #7dd3fc;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+.member h3 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.member p {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* ===== GALERI ===== */
+.gallery {
+  background: #0d1321;
+}
+
+.gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  background: #121b2c;
+  border: 1px solid #263449;
+  border-radius: 14px;
+}
+
+.photo {
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  font-size: 50px;
+  background:
+    radial-gradient(circle at 30% 30%,
+    #27577b, transparent 60%),
+    linear-gradient(135deg, #192e50, #34234e);
+}
+
+.gallery-item h3 {
+  padding: 16px 18px 0;
+  font-size: 16px;
+}
+
+.gallery-item p {
+  padding: 0 18px 18px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-controls button {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  border: 1px solid #334155;
+  background: #121b2c;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.gallery-controls button:hover {
+  background: #1e3a5b;
+}
+
+/* ===== PENUTUP ===== */
+.closing {
+  text-align: center;
+  padding: 100px 0;
+  background:
+    radial-gradient(ellipse at center,
+    #172e50, transparent 70%);
+}
+
+.closing h2 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.closing h2 span {
+  color: #38bdf8;
+}
+
+.closing p {
+  color: #a7b2c6;
+  max-width: 600px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #263449;
+  padding: 25px;
+  color: #8492a8;
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVE HP ===== */
+@media (max-width: 850px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-intro,
+  .gallery-head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: 90%;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .stat h3 {
+    font-size: 25px;
+  }
+
+  .cards,
+  .member-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGASI ===== -->
+<nav>
+  <div class="container nav-content">
+    <a class="logo" href="#home">X SOFT SKILL</a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#anggota">Anggota</a></li>
+      <li><a href="#kenangan">Kenangan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BERANDA ===== -->
+<header class="hero" id="home">
+  <div class="container hero-content">
+    <span class="hero-label">ANGKATAN 2026</span>
+
+    <h1>
+      X SOFT SKILL<br>
+      <span>One Story.</span>
+    </h1>
+
+    <p>
+      Website resmi keluarga besar X SOFT SKILL
+      Angkatan 2026. Satu kelas, banyak cerita,
+      dan kenangan yang akan selalu menjadi bagian
+      dari perjalanan kita.
+    </p>
+
+    <div class="buttons">
+      <a href="#kenangan" class="btn btn-primary">
+        Lihat Kenangan →
+      </a>
+      <a href="#anggota" class="btn">
+        Lihat Anggota
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>16+</h3>
+        <p>Anggota Kelas</p>
+      </div>
+      <div class="stat">
+        <h3>2026</h3>
+        <p>Angkatan</p>
+      </div>
+      <div class="stat">
+        <h3>X SOFT SKILL</h3>
+        <p>Tingkat Kelas</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TENTANG KELAS ===== -->
+<section class="about" id="tentang">
+  <div class="container">
+    <div class="about-intro">
+      <div>
+        <span class="eyebrow">Tentang Kita</span>
+        <h2 class="section-title">
+          Satu kelas.<br>Banyak cerita.
+        </h2>
+      </div>
+
+      <p class="description">
+        X SOFT SKILL adalah tempat di mana berbagai
+        karakter, kemampuan, dan cerita bertemu menjadi
+        satu perjalanan.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">✦</div>
+        <h3>Kebersamaan</h3>
+        <p>
+          Menjalani hari-hari sekolah bersama,
+          saling membantu, dan menciptakan suasana
+          kelas yang penuh cerita.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">◈</div>
+        <h3>Perjalanan</h3>
+        <p>
+          Setiap tugas, kegiatan, candaan, dan
+          tantangan menjadi bagian perjalanan
+          menuju masa depan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Semangat</h3>
+        <p>
+          Terus belajar, berkembang, dan berusaha
+          menjadi versi terbaik dari diri sendiri.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">∞</div>
+        <h3>Kenangan</h3>
+        <p>
+          Masa sekolah mungkin akan berlalu,
+          tetapi cerita dan kenangan akan selalu
+          menjadi bagian perjalanan kita.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAFTAR ANGGOTA ===== -->
+<section id="anggota">
+  <div class="container">
+    <span class="eyebrow">Keluarga Kelas</span>
+    <h2 class="section-title">Anggota X SOFT SKILL</h2>
+    <p class="description">
+      Mereka yang membuat perjalanan Angkatan 2026
+      menjadi lebih berwarna.
+    </p>
+
+    <div class="member-grid" id="memberGrid"></div>
+  </div>
+</section>
+
+<!-- ===== GALERI KENANGAN ===== -->
+<section class="gallery" id="kenangan">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <span class="eyebrow">Memory</span>
+        <h2 class="section-title">Kenangan Kita</h2>
+        <p class="description">
+          Kumpulan momen dan cerita X SOFT SKILL
+          Angkatan 2026/2027
+        </p>
+      </div>
+
+      <div class="gallery-controls">
+        <button onclick="geserGaleri(-1)"
+                aria-label="Sebelumnya">←</button>
+        <button onclick="geserGaleri(1)"
+                aria-label="Berikutnya">→</button>
+      </div>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <p style="margin-top:20px;color:#94a3b8;font-size:13px">
+      ← Geser → atau tekan tombol untuk melihat foto lainnya
+    </p>
+  </div>
+</section>
+
+<!-- ===== PENUTUP ===== -->
+<section class="closing">
+  <div class="container">
+    <span class="eyebrow">Our Story</span>
+    <h2>One Class.<br><span>One Story.</span></h2>
+
+    <p>
+      Tahun boleh berganti, sekolah boleh selesai,
+      tetapi cerita X SOFT SKILL Angkatan 2026/2027
+      akan selalu menjadi bagian dari perjalanan kita.
+    </p>
+
+    <button class="btn btn-primary" onclick="salam()"
+            style="margin-top:28px">
+      Salam Keluarga Kelas
+    </button>
+  </div>
+</section>
+
+<footer>
+  © 2026 X SOFT SKILL • Angkatan 2026/2027
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+const anggota = [
+  ["Agung Dimas Wiranto", "Ketua Kelas"],
+  ["Dirga Ruilian Perdana", "Wakil Ketua"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["Muhammad Samir Asshobir", "Anggota"],
+  ["", "Anggota"],
+  ["Hanif Zuhdi Ahmad", "Anggota"],
+  ["Ananta Khoirudin", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"],
+  ["", "Anggota"]
+];
+
+// Membuat kartu anggota secara otomatis
+const memberGrid = document.getElementById("memberGrid");
+
+anggota.forEach((orang, index) => {
+  const kartu = document.createElement("article");
+  kartu.className = "member";
+
+  const nomor = String(index + 1).padStart(2, "0");
+
+  const angka = document.createElement("div");
+  angka.className = "number";
+  angka.textContent = nomor;
+
+  const info = document.createElement("div");
+  const nama = document.createElement("h3");
+  nama.textContent = orang[0];
+
+  const jabatan = document.createElement("p");
+  jabatan.textContent = orang[1];
+
+  info.append(nama, jabatan);
+  kartu.append(angka, info);
+  memberGrid.appendChild(kartu);
+});
+
+// Data galeri
+const kenangan = [
+  ["Kebersamaan", "X SOFT SKILL • 2026/2027"],
+  ["Satu Kelas", "Angkatan 2026/2027"],
+  ["Momen Bersama", "X SOFT SKILL • 2026/2027"],
+  ["Cerita Kita", "Angkatan 2026/2027"],
+  ["Best Moment", "X SOFT SKILL • 2026/2027"],
+  ["One Story", "2026/2027"],
+  ["Memories", "X SOFT SKILL • 2026/2027"],
+  ["Our Journey", "Angkatan 2026/2027"],
+  ["Friendship", "X SOFT SKILL • 2026/2027"],
+  ["School Story", "Angkatan 2026/2027"],
+  ["Forever Memory", "X SOFT SKILL • 2026/2027"]
+];
+
+let posisiGaleri = 0;
+const jumlahTampil = 3;
+
+function tampilkanGaleri() {
+  const grid = document.getElementById("galleryGrid");
+  grid.innerHTML = "";
+
+  for (let i = 0; i < jumlahTampil; i++) {
+    const index =
+      (posisiGaleri + i) % kenangan.length;
+
+    const data = kenangan[index];
+
+    const item = document.createElement("article");
+    item.className = "gallery-item";
+
+    const foto = document.createElement("div");
+    foto.className = "photo";
+    foto.textContent = "📸";
+
+    const judul = document.createElement("h3");
+    judul.textContent = data[0];
+
+    const keterangan = document.createElement("p");
+    keterangan.textContent = data[1];
+
+    item.append(foto, judul, keterangan);
+    grid.appendChild(item);
+  }
+}
+
+function geserGaleri(arah) {
+  posisiGaleri =
+    (posisiGaleri + arah + kenangan.length)
+    % kenangan.length;
+
+  tampilkanGaleri();
+}
+
+function salam() {
+  alert(
+    "Salam keluarga besar X! " +
+    "Satu kelas, banyak cerita, One Story!"
+  );
+}
+
+tampilkanGaleri();
+</script>
+
+</body>
+</html>
